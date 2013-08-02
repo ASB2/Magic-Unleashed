@@ -16,7 +16,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 
 @Mod(modid = Reference.MODDID, name = Reference.NAME, version = Reference.VERSION)
 
-@NetworkMod(clientSideRequired = true, serverSideRequired = false, channels={Reference.MOD_CHANNEL}, packetHandler = MUPacketHandler.class)
+@NetworkMod(clientSideRequired = true, serverSideRequired = false, channels={"MU_ModdingTeam_MagicUnleashed"}, packetHandler = MUPacketHandler.class)
 
 public class MagicUnleashed {
 
@@ -24,7 +24,7 @@ public class MagicUnleashed {
 
     public static MagicUnleashed instance;
 
-    @SidedProxy(clientSide="MU.proxy.ClientProxy", serverSide="MU.proxy.CommonProxy")
+    @SidedProxy(clientSide = "MU.proxy.ClientProxy", serverSide = "MU.proxy.CommonProxy")
 
     public static CommonProxy proxy;
 
@@ -32,6 +32,8 @@ public class MagicUnleashed {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {    
+
+        instance = this;
 
         Configuration config = new Configuration(event.getSuggestedConfigurationFile());
         config.load();
@@ -46,7 +48,6 @@ public class MagicUnleashed {
     public void mainInit(FMLInitializationEvent event) {
 
         proxy.register();
-        instance = this;
     }
 
     @EventHandler

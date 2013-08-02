@@ -10,20 +10,21 @@ public class MUCreativeTab extends CreativeTabs {
     
     public MUCreativeTab(int par1, String name) {
         super(par1, name);
+        
         this.name = name;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public int getTabIconItemIndex() //The item it displays for your tab
-    {
+    public int getTabIconItemIndex() {
+        
         return 1;
 //        return ItemRegistry.ItemEnergyCrystalShard.itemID;
     }
     
     @Override
-    public String getTranslatedTabLabel()
-    {
+    public String getTranslatedTabLabel() {
+        
         return name;
     }
 }
