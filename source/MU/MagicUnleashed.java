@@ -2,6 +2,7 @@ package MU;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.Configuration;
+import MU.packets.MUPacketHandler;
 import MU.proxy.CommonProxy;
 import MU.utils.Reference;
 import cpw.mods.fml.common.Mod;
@@ -15,33 +16,19 @@ import cpw.mods.fml.common.network.NetworkMod;
 
 @Mod(modid = Reference.MODDID, name = Reference.NAME, version = Reference.VERSION)
 
-//@NetworkMod(clientSideRequired = true, serverSideRequired = false, channels={TechCraftPacketBase.CHANNEL}, packetHandler = TechCraftPacketHandler.class)
-@NetworkMod(clientSideRequired = true, serverSideRequired = false)
+@NetworkMod(clientSideRequired = true, serverSideRequired = false, channels={Reference.MOD_CHANNEL}, packetHandler = MUPacketHandler.class)
 
 public class MagicUnleashed {
 
-    @Instance(Reference.MODDID)
+    @Instance(Reference.MODDID)    
 
     public static MagicUnleashed instance;
 
     @SidedProxy(clientSide="MU.proxy.ClientProxy", serverSide="MU.proxy.CommonProxy")
 
-    public static CommonProxy proxy;    
+    public static CommonProxy proxy;
 
     public static CreativeTabs tabMU = new MUCreativeTab(CreativeTabs.getNextID(), Reference.NAME);
-
-    @EventHandler
-    public void mainInit(FMLInitializationEvent event) {
-        
-        proxy.register();
-        instance = this;
-    }
-
-    @EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
-        
-        CraftRegistry.init();
-    }
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {    
@@ -55,4 +42,16 @@ public class MagicUnleashed {
         config.save();
     }
 
+    @EventHandler
+    public void mainInit(FMLInitializationEvent event) {
+
+        proxy.register();
+        instance = this;
+    }
+
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event) {
+
+        CraftRegistry.init();
+    }
 }

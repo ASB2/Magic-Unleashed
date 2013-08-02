@@ -1,9 +1,10 @@
 package MU;
 
+import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class MUCreativeTab extends net.minecraft.creativetab.CreativeTabs {
+public class MUCreativeTab extends CreativeTabs {
 
     String name;
     
