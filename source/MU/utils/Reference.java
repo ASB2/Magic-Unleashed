@@ -1,6 +1,6 @@
 package MU.utils;
 
-public class Reference {
+public final class Reference {
 
     public static final String MODDID = "MagicUnleashed";
     public static final String NAME = "Magic Unleashed";

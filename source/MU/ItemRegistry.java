@@ -3,9 +3,10 @@ package MU;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.EnumHelper;
+import MU.items.ItemBase;
+import MU.items.ItemTestItem;
 import MU.utils.Reference;
 import cpw.mods.fml.common.registry.LanguageRegistry;
-import MU.items.*;
 
 public class ItemRegistry {
 
@@ -15,15 +16,15 @@ public class ItemRegistry {
 
     private static int id = 5000;
     
+    public static int getNextBaseID() {
+
+        return id++;
+    }
+
     public static void init(Configuration config) {
         
         ItemTestItem = new ItemTestItem(config.getItem("ItemTestItem", ItemRegistry.getNextBaseID()).getInt());
         ItemTestItem.setUnlocalizedName(Reference.UNIQUE_NAME+"ItemAirCrystalShard");
         LanguageRegistry.addName(ItemTestItem, "Test Item");
-    }
-
-    public static int getNextBaseID() {
-
-        return id++;
     }
 }

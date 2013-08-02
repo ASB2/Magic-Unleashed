@@ -2,7 +2,7 @@ package MU.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import MU.*;
+import MU.MagicUnleashed;
 
 public class BlockBase extends Block {
 

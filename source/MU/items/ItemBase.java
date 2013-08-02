@@ -1,7 +1,7 @@
 package MU.items;
 
-import MU.MagicUnleashed;
 import net.minecraft.item.Item;
+import MU.MagicUnleashed;
 
 public class ItemBase extends Item {
 

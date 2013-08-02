@@ -31,6 +31,19 @@ public class MagicUnleashed {
     public static CreativeTabs tabMU = new MUCreativeTab(CreativeTabs.getNextID(), Reference.NAME);
 
     @EventHandler
+    public void mainInit(FMLInitializationEvent event) {
+        
+        proxy.register();
+        instance = this;
+    }
+
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event) {
+        
+        CraftRegistry.init();
+    }
+
+    @EventHandler
     public void preInit(FMLPreInitializationEvent event) {    
 
         Configuration config = new Configuration(event.getSuggestedConfigurationFile());
@@ -40,16 +53,6 @@ public class MagicUnleashed {
         BlockRegistry.init(config);
 
         config.save();
-    }
-
-    @EventHandler
-    public void mainInit(FMLInitializationEvent event) {
-        proxy.register();
-        instance = this;
-    }
-
-    @EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
     }
 
 }
