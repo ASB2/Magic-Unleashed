@@ -7,7 +7,8 @@ public enum EssenceType {
     FIRE,
     WATER,
     OTHER,
-    NONE;
+    NONE,
+    NON_UNDERSTANDABLE;
 
     public static int translateEssenceTypeToInt(EssenceType type) {
 
@@ -23,7 +24,9 @@ public enum EssenceType {
 
             case OTHER: return 5;
 
-            case NONE: return 6;            
+            case NONE: return 6;
+            
+            case NON_UNDERSTANDABLE: return 7;
         }
         return 0;        
     }
@@ -42,7 +45,9 @@ public enum EssenceType {
 
             case 5: return OTHER;
 
-            case 6: return NONE;            
+            case 6: return NONE;
+
+            case 7: return NON_UNDERSTANDABLE;
         }
         
         return NONE;
