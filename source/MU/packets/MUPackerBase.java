@@ -2,6 +2,7 @@ package MU.packets;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.network.packet.Packet;
+import MU.info.Reference;
 
 import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableBiMap;
@@ -11,7 +12,6 @@ import com.google.common.io.ByteStreams;
 
 import cpw.mods.fml.common.network.PacketDispatcher;
 import cpw.mods.fml.relauncher.Side;
-import MU.utils.*;
 
 public abstract class MUPackerBase {
 

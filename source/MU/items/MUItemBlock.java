@@ -1,9 +1,10 @@
-package MU;
+package MU.items;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import MU.utils.Reference;
+import MU.MagicUnleashed;
+import MU.info.Reference;
 
 public class MUItemBlock extends ItemBlock {
     

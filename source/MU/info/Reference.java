@@ -1,4 +1,4 @@
-package MU.utils;
+package MU.info;
 
 public final class Reference {
 
