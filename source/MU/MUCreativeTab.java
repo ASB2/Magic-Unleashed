@@ -17,9 +17,8 @@ public class MUCreativeTab extends CreativeTabs {
     @Override
     @SideOnly(Side.CLIENT)
     public int getTabIconItemIndex() {
-        
-        return 1;
-//        return ItemRegistry.ItemEnergyCrystalShard.itemID;
+
+        return ItemRegistry.ItemSimpleTopazFocus.itemID;
     }
     
     @Override

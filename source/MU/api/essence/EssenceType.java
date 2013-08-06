@@ -2,54 +2,35 @@ package MU.api.essence;
 
 public enum EssenceType {
 
-    AIR,
-    EARTH,
-    FIRE,
-    WATER,
-    OTHER,
-    NONE,
-    NON_UNDERSTANDABLE;
+    AIR(1),
+    EARTH(2),
+    FIRE(3),
+    WATER(4),
+    OTHER(5),
+    NONE(6),
+    NON_UNDERSTANDABLE(7);
+
+    EssenceType(int id) {
+
+        essenceID = id;
+    }
+
+    int essenceID = 0;
 
     public static int translateEssenceTypeToInt(EssenceType type) {
 
-        switch(type) {
-
-            case AIR: return 1;
-
-            case EARTH:return 2;
-
-            case FIRE:return 3;
-
-            case WATER: return 4;
-
-            case OTHER: return 5;
-
-            case NONE: return 6;
-            
-            case NON_UNDERSTANDABLE: return 7;
-        }
-        return 0;        
+        return type.essenceID;        
     }
 
     public static EssenceType translateIntToEssenceType(int type) {
 
-        switch(type) {
+        for(EssenceType tempType : EssenceType.values()) {
 
-            case 1: return AIR;
+            if(tempType.essenceID == type) {
 
-            case 2:return EARTH;
-
-            case 3:return FIRE;
-
-            case 4: return WATER;
-
-            case 5: return OTHER;
-
-            case 6: return NONE;
-
-            case 7: return NON_UNDERSTANDABLE;
+                return tempType;
+            }
         }
-        
         return NONE;
     }
 }

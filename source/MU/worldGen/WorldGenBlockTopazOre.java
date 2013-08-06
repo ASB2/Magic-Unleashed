@@ -23,6 +23,6 @@ public class WorldGenBlockTopazOre implements IWorldGenerator {
         int Ycoord = random.nextInt(60);
         int Zcoord = blockZ + random.nextInt(16);
 
-        (new WorldGenMinable(BlockRegistry.BlockTopazOre.blockID, 25)).generate(world, random, Xcoord, Ycoord, Zcoord);
+        (new WorldGenMinable(BlockRegistry.BlockTopazOre.blockID, 15)).generate(world, random, Xcoord, Ycoord, Zcoord);
     }
 }
